@@ -48,7 +48,7 @@ function setAlarm() {
 		document.getElementById('span_alarm_second').innerHTML = 60;
 
 		/* 입력받은 시간을 밀리초로 변환 */
-		setTime = hour * 60 * 60 * 1000;
+		let setTime = hour * 60 * 60 * 1000;
 		setTime = setTime + (minute * 60 * 1000);
 
 		let d = new Date();
@@ -61,6 +61,7 @@ function setAlarm() {
 }
 
 function countLeftTime() {
+	console.log(leftTime);
 	let counter = setTimeout(countLeftTime, 1000);
 	if(leftTime == 0) {
 		clearTimeout(counter);
@@ -73,7 +74,12 @@ function countLeftTime() {
 
 		/* 남은 시간 계산하여 출력 */
 		let hour = Math.floor(leftTime / 60 / 60);
-		let minute = Math.floor(leftTime/ 60);
+		let minute = Math.floor(leftTime / 60);
+
+		if(hour >= 1) {
+			minute = Math.floor(leftTime / 60) - (hour * 60);
+		}
+
 		let second = leftTime - (hour * 60 * 60) - (minute * 60);
 		
 		minute = (minute < 10) ? "0" + minute : minute;
