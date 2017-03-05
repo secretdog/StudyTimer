@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Study Timer</title>
+		<link rel="stylesheet" type="text/css" href="main.css" />
+	</head>
+	<body onload="startClock()">
+		<div class="div_main">
+			<p>현재 시각</p>
+			<p id="p_current_time"></p>
+
+			<p>
+				<input type="number" class="input" id="input_hour" min="0" /><span class="hidden alarm_on" id="span_alarm_hour"></span>시간
+				<input type="number" class="input" id="input_minute" min="0" max="59" /><span class="hidden alarm_on" id="span_alarm_minute"></span>분
+				<span class="hidden alarm_on" id="span_alarm_second"></span><span class="hidden alarm_on" id="span_alarm_phrase">초 후에 알람이 울립니다.</span>
+			</p>
+
+			<button class="btn" id="btn_set_timer" onclick="setAlarm();">타이머 설정</button>
+			<button class="btn hidden alarm_on" id="btn_cancel_alarm" onclick="resetAlarm();">타이머 해제</button>
+			<button class="btn hidden alarm_off" id="btn_alarm_off" onclick="stopAlarm();">알람 중지</button>
+
+			<p class="hidden" id="p_alert"></p>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
+</html>

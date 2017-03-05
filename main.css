@@ -1,0 +1,27 @@
+.div_main {
+	margin-top: 200px;
+	text-align: center;
+	font-size: 14pt;
+}
+
+input[type="number"] {
+	width: 50px;
+	height: 30px;
+	font-size: 14pt;
+}
+
+button {
+	font-size: 14pt;
+}
+
+.hidden {
+	display: none;
+}
+
+#span_alarm_hour, #span_alarm_minute, #span_alarm_second {
+	color: red;
+}
+
+#p_alert {
+	color: red;
+}
